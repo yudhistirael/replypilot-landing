@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReplyPilot — Auto Reply Threads & X dengan AI | Khusus Affiliate Indonesia</title>
+  <meta name="description" content="Auto reply Threads & X 24/7 pakai AI. Khusus affiliate Shopee & TikTok Shop Indonesia. Mulai Rp 99rb/bulan." />
+  <meta property="og:title" content="ReplyPilot — Auto Reply AI buat Affiliate Indonesia" />
+  <meta property="og:description" content="Skip 4 jam balas komen tiap hari. AI yang ngerti gaya kamu, jalan 24/7, harga Indonesia." />
+  <meta property="og:type" content="website" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #0a0a0f;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 24px 0; border-bottom: 1px solid #1a1a24; }
+    .nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 22px; font-weight: 800; background: linear-gradient(90deg, #a855f7, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav a { color: #aaa; text-decoration: none; margin-left: 24px; font-size: 14px; }
+    .nav a:hover { color: #fff; }
+
+    .hero { padding: 100px 0 80px; text-align: center; }
+    .badge { display: inline-block; padding: 6px 14px; background: rgba(168, 85, 247, 0.12); color: #c084fc; border-radius: 999px; font-size: 13px; margin-bottom: 24px; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .hero h1 { font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -1px; }
+    .hero h1 span { background: linear-gradient(90deg, #a855f7, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 20px; color: #aaa; max-width: 680px; margin: 0 auto 40px; }
+    .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn { display: inline-block; padding: 16px 32px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: linear-gradient(90deg, #a855f7, #06b6d4); color: #fff; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(168, 85, 247, 0.3); }
+    .btn-secondary { background: transparent; color: #fff; border: 1px solid #2a2a3a; }
+    .btn-secondary:hover { background: #1a1a24; }
+
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 60px 0; }
+    .stat { text-align: center; padding: 24px; background: #11111a; border-radius: 12px; border: 1px solid #1a1a24; }
+    .stat-num { font-size: 36px; font-weight: 800; color: #a855f7; }
+    .stat-label { font-size: 14px; color: #aaa; margin-top: 4px; }
+
+    section { padding: 80px 0; }
+    h2 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .section-sub { text-align: center; color: #aaa; max-width: 640px; margin: 0 auto 60px; }
+
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .feature { padding: 32px; background: #11111a; border-radius: 16px; border: 1px solid #1a1a24; }
+    .feature-icon { font-size: 32px; margin-bottom: 16px; }
+    .feature h3 { font-size: 20px; margin-bottom: 8px; }
+    .feature p { color: #aaa; font-size: 14px; }
+
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+    .price-card { padding: 40px 32px; background: #11111a; border-radius: 16px; border: 1px solid #1a1a24; display: flex; flex-direction: column; }
+    .price-card.featured { border-color: #a855f7; box-shadow: 0 0 0 1px #a855f7; transform: scale(1.04); position: relative; }
+    .featured-tag { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #a855f7; color: #fff; padding: 4px 16px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .price-tier { font-size: 14px; color: #c084fc; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; }
+    .price { font-size: 48px; font-weight: 800; margin: 16px 0; }
+    .price small { font-size: 16px; color: #aaa; font-weight: 400; }
+    .price-features { list-style: none; margin: 24px 0; flex-grow: 1; }
+    .price-features li { padding: 8px 0; color: #ccc; font-size: 15px; }
+    .price-features li:before { content: "✓ "; color: #06b6d4; font-weight: 700; }
+
+    .faq-item { background: #11111a; border-radius: 12px; margin-bottom: 12px; overflow: hidden; border: 1px solid #1a1a24; }
+    .faq-q { padding: 20px 24px; font-weight: 600; cursor: pointer; user-select: none; display: flex; justify-content: space-between; }
+    .faq-a { padding: 0 24px 20px; color: #aaa; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+    .faq-q span { transition: transform 0.2s; }
+
+    footer { padding: 40px 0; text-align: center; color: #666; font-size: 14px; border-top: 1px solid #1a1a24; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 16px; }
+      .features, .pricing, .stats { grid-template-columns: 1fr; }
+      .price-card.featured { transform: none; }
+      h2 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="logo">⚡ ReplyPilot</div>
+      <div>
+        <a href="#features">Fitur</a>
+        <a href="#pricing">Harga</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary" style="padding: 8px 20px; font-size: 14px;">Mulai</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <span class="badge">🇮🇩 Khusus Affiliate Marketer Indonesia</span>
+      <h1>Auto Reply Threads & X<br /><span>24/7 Pakai AI</span></h1>
+      <p>Skip 4 jam balasin komen tiap hari. AI bikin reply natural sesuai gaya kamu, bot jalan otomatis, kamu fokus closing produk Shopee & TikTok Shop.</p>
+      <div class="cta-row">
+        <a href="#pricing" class="btn btn-primary">Lihat Harga →</a>
+        <a href="#contact" class="btn btn-secondary">Konsultasi Gratis</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">100+</div>
+          <div class="stat-label">Reply otomatis per hari</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Aktif tanpa henti</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Rp 99rb</div>
+          <div class="stat-label">Mulai per bulan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>Kenapa ReplyPilot?</h2>
+      <p class="section-sub">Bot biasa = robot kaku. ReplyPilot pakai AI Claude Sonnet 4.5 yang ngerti context & gaya kamu.</p>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🤖</div>
+          <h3>AI Quality Reply</h3>
+          <p>Pakai Claude Sonnet 4.5 — reply natural, sesuai gaya bahasa kamu, bukan template kaku. Ga ketauan bot.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🇮🇩</div>
+          <h3>Bahasa Indonesia Native</h3>
+          <p>Reply pakai bahasa gaul, slang, atau formal — sesuai brand kamu. Kompetitor luar ga ngerti pasar Indo.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">💸</div>
+          <h3>Harga Indonesia</h3>
+          <p>Mulai Rp 99rb/bulan. Bayar pakai QRIS, GoPay, OVO, DANA. Ga perlu kartu kredit luar negeri.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h3>Multi-Akun Support</h3>
+          <p>Manage 1-10 akun Threads/X dari 1 dashboard. Tiap akun bisa punya gaya reply beda.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🛡️</div>
+          <h3>Anti-Detection</h3>
+          <p>Random delay, mimic human pattern, residential proxy. Akun kamu aman dari shadow ban.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">📊</div>
+          <h3>Analytics Real-time</h3>
+          <p>Tracking reply count, engagement rate, top performing reply. Optimasi terus berdasarkan data.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="container">
+      <h2>Harga yang Make Sense</h2>
+      <p class="section-sub">No hidden fee. Bisa cancel kapan aja. Trial 7 hari gratis untuk semua paket.</p>
+      <div class="pricing">
+        <div class="price-card">
+          <div class="price-tier">Starter</div>
+          <div class="price">Rp 99rb<small>/bulan</small></div>
+          <ul class="price-features">
+            <li>1 akun Threads atau X</li>
+            <li>30 reply/hari</li>
+            <li>AI Haiku (cepat, hemat)</li>
+            <li>Custom prompt dasar</li>
+            <li>Support via WhatsApp</li>
+            <li>Trial 7 hari gratis</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" data-tier="starter">Pilih Starter</a>
+        </div>
+        <div class="price-card featured">
+          <div class="featured-tag">PALING POPULER</div>
+          <div class="price-tier">Pro</div>
+          <div class="price">Rp 249rb<small>/bulan</small></div>
+          <ul class="price-features">
+            <li>3 akun (Threads + X mix)</li>
+            <li>100 reply/hari per akun</li>
+            <li>Claude Sonnet 4.5 (AI premium)</li>
+            <li>Custom prompt advanced</li>
+            <li>Analytics dashboard</li>
+            <li>Anti-detection level 2</li>
+            <li>Support priority</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary" data-tier="pro">Pilih Pro</a>
+        </div>
+        <div class="price-card">
+          <div class="price-tier">Business</div>
+          <div class="price">Rp 499rb<small>/bulan</small></div>
+          <ul class="price-features">
+            <li>10 akun unlimited</li>
+            <li>Reply unlimited</li>
+            <li>Claude Opus (AI top tier)</li>
+            <li>White-label dashboard</li>
+            <li>Custom integration</li>
+            <li>Residential proxy included</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <a href="#contact" class="btn btn-secondary" data-tier="business">Pilih Business</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="container">
+      <h2>Pertanyaan Umum</h2>
+      <p class="section-sub">Belum nemu jawaban? Chat WhatsApp kami langsung.</p>
+      <div style="max-width: 720px; margin: 0 auto;">
+        <div class="faq-item">
+          <div class="faq-q">Akun saya aman dari ban? <span>+</span></div>
+          <div class="faq-a">Iya. Kami pakai random delay (5-30 detik antar reply), mimic human pattern, dan residential proxy untuk paket Pro+. Reply quality tinggi pakai Claude Sonnet jadi ga ketauan AI. Tapi tetap kami sarankan ga over-aggressive — paket Starter cap 30 reply/hari sengaja biar aman.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Cara setup-nya gimana? <span>+</span></div>
+          <div class="faq-a">Setup dibantu admin via WhatsApp. Kamu cukup kasih akses akun (lewat cookie export atau credential), kasih tau gaya reply yang diinginkan, dan target keyword. Kami yang setup di server, kamu langsung pantau hasilnya di dashboard.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Bayar pakai apa? <span>+</span></div>
+          <div class="faq-a">QRIS, GoPay, OVO, DANA, ShopeePay, transfer bank, atau Tripay. Semua metode payment Indonesia kami terima. Tagihan otomatis tiap bulan, bisa cancel kapan aja.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Bisa custom gaya reply? <span>+</span></div>
+          <div class="faq-a">Bisa banget. Kamu kasih contoh 5-10 reply yang lo udah pernah tulis, AI bakal mimic gaya lo. Bahasa gaul, formal, banyak emoji, pake "lu/gua", semua bisa. Ini yang bikin ReplyPilot beda dari template bot biasa.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Trial gratisnya beneran? <span>+</span></div>
+          <div class="faq-a">Iya, 7 hari full feature gratis. Ga perlu masukin kartu kredit. Kalau cocok lanjut bayar, kalau ga cocok ga ada charge sama sekali. Goal kami biar lo ngerasain dulu hasilnya.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Bedanya sama Hypefury / TweetHunter? <span>+</span></div>
+          <div class="faq-a">Mereka fokus posting jadwal otomatis (scheduling). Kami fokus reply otomatis berbasis AI — fitur yang justru ga mereka punya. Plus harga kami 1/5 dari mereka, dan kami support Threads (mereka cuma X/Twitter).</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Bisa untuk niche selain affiliate? <span>+</span></div>
+          <div class="faq-a">Bisa. Affiliate Shopee/TikTok cuma target utama, tapi crypto KOL, UMKM, content creator, atau personal branding juga banyak yang pakai. Custom prompt bikin tools ini fleksibel.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(6, 182, 212, 0.1)); border-radius: 16px; margin: 60px auto; max-width: 900px;">
+    <div class="container" style="text-align: center;">
+      <h2>Mulai Trial 7 Hari Gratis</h2>
+      <p class="section-sub">Klik tombol di bawah, langsung connect ke admin via WhatsApp. Setup gratis, kamu langsung jalan dalam 30 menit.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/6281234567890?text=Halo%20admin%2C%20saya%20mau%20coba%20ReplyPilot%20trial%207%20hari" class="btn btn-primary" id="wa-cta">📱 WhatsApp Admin</a>
+        <a href="https://t.me/replypilot_admin" class="btn btn-secondary">✉️ Telegram Admin</a>
+      </div>
+      <p style="margin-top: 24px; color: #666; font-size: 14px;">Respon admin: Senin–Sabtu, 09:00–22:00 WIB</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p><strong>ReplyPilot</strong> — Made with ❤️ in Indonesia</p>
+      <p style="margin-top: 8px;">© 2026 ReplyPilot. Powered by Claude Sonnet 4.5 & Hermes Agent.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+    });
+
+    document.querySelectorAll('[data-tier]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const tier = btn.dataset.tier;
+        const tierName = { starter: 'Starter (Rp 99rb)', pro: 'Pro (Rp 249rb)', business: 'Business (Rp 499rb)' }[tier];
+        const wa = `https://wa.me/6281234567890?text=Halo%20admin%2C%20saya%20mau%20daftar%20paket%20${encodeURIComponent(tierName)}%20ReplyPilot`;
+        window.open(wa, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>
